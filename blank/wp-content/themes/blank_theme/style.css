@@ -1,0 +1,2197 @@
+/*
+Theme Name: silva
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: silva
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ silva is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Reset
+2.0 Typography
+3.0 Elements
+4.0 Forms
+5.0 Navigation
+	5.1 Links
+	5.2 Menus
+6.0 Accessibility
+7.0 Alignments
+8.0 Clearings
+9.0 Widgets
+10.0 Content
+	10.1 Posts and pages
+	10.2 Asides
+	10.3 Comments
+11.0 Infinite scroll
+12.0 Media
+	12.1 Captions
+	12.2 Galleries
+--------------------------------------------------------------*/
+
+/*** FONTS ***/
+@font-face {
+    font-family: 'hindlight';
+    src: url('fonts/hind-light-webfont.eot');
+    src: url('fonts/hind-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hind-light-webfont.woff2') format('woff2'),
+         url('fonts/hind-light-webfont.woff') format('woff'),
+         url('fonts/hind-light-webfont.ttf') format('truetype'),
+         url('fonts/hind-light-webfont.svg#hindlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hind_regular';
+    src: url('fonts/hind-regular-webfont.eot');
+    src: url('fonts/hind-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hind-regular-webfont.woff2') format('woff2'),
+         url('fonts/hind-regular-webfont.woff') format('woff'),
+         url('fonts/hind-regular-webfont.ttf') format('truetype'),
+         url('fonts/hind-regular-webfont.svg#hind_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hindmedium';
+    src: url('fonts/hind-medium-webfont.eot');
+    src: url('fonts/hind-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hind-medium-webfont.woff2') format('woff2'),
+         url('fonts/hind-medium-webfont.woff') format('woff'),
+         url('fonts/hind-medium-webfont.ttf') format('truetype'),
+         url('fonts/hind-medium-webfont.svg#hindmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hindbold';
+    src: url('fonts/hind-bold-webfont.eot');
+    src: url('fonts/hind-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hind-bold-webfont.woff2') format('woff2'),
+         url('fonts/hind-bold-webfont.woff') format('woff'),
+         url('fonts/hind-bold-webfont.ttf') format('truetype'),
+         url('fonts/hind-bold-webfont.svg#hindbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hindsemibold';
+    src: url('fonts/hind-semibold-webfont.eot');
+    src: url('fonts/hind-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/hind-semibold-webfont.woff2') format('woff2'),
+         url('fonts/hind-semibold-webfont.woff') format('woff'),
+         url('fonts/hind-semibold-webfont.ttf') format('truetype'),
+         url('fonts/hind-semibold-webfont.svg#hindsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'sinkin_sans200_x_light';
+    src: url('fonts/sinkinsans-200xlight-webfont.eot');
+    src: url('fonts/sinkinsans-200xlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sinkinsans-200xlight-webfont.woff2') format('woff2'),
+         url('fonts/sinkinsans-200xlight-webfont.woff') format('woff'),
+         url('fonts/sinkinsans-200xlight-webfont.ttf') format('truetype'),
+         url('fonts/sinkinsans-200xlight-webfont.svg#sinkin_sans200_x_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'sinkin_sans300_light';
+    src: url('fonts/sinkinsans-300light-webfont.eot');
+    src: url('fonts/sinkinsans-300light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sinkinsans-300light-webfont.woff2') format('woff2'),
+         url('fonts/sinkinsans-300light-webfont.woff') format('woff'),
+         url('fonts/sinkinsans-300light-webfont.ttf') format('truetype'),
+         url('fonts/sinkinsans-300light-webfont.svg#sinkin_sans300_light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'sinkin_sans400_regular';
+    src: url('fonts/sinkinsans-400regular-webfont.eot');
+    src: url('fonts/sinkinsans-400regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sinkinsans-400regular-webfont.woff2') format('woff2'),
+         url('fonts/sinkinsans-400regular-webfont.woff') format('woff'),
+         url('fonts/sinkinsans-400regular-webfont.ttf') format('truetype'),
+         url('fonts/sinkinsans-400regular-webfont.svg#sinkin_sans400_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sinkin_sans500_medium';
+    src: url('fonts/sinkinsans-500medium-webfont.eot');
+    src: url('fonts/sinkinsans-500medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sinkinsans-500medium-webfont.woff2') format('woff2'),
+         url('fonts/sinkinsans-500medium-webfont.woff') format('woff'),
+         url('fonts/sinkinsans-500medium-webfont.ttf') format('truetype'),
+         url('fonts/sinkinsans-500medium-webfont.svg#sinkin_sans500_medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sinkin_sans600_semibold';
+    src: url('fonts/sinkinsans-600semibold-webfont.eot');
+    src: url('fonts/sinkinsans-600semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sinkinsans-600semibold-webfont.woff2') format('woff2'),
+         url('fonts/sinkinsans-600semibold-webfont.woff') format('woff'),
+         url('fonts/sinkinsans-600semibold-webfont.ttf') format('truetype'),
+         url('fonts/sinkinsans-600semibold-webfont.svg#sinkin_sans600_semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	box-sizing: border-box; /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+}
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+  background: url(images/paper-bkg-700x450.jpg) repeat #000000;
+	height: 100%;
+	color: #4b4b4b;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+	border: 1px solid #d7d7d7; 
+	padding: 20px;
+}
+
+td {
+	font-size: 12px;
+	font-family: 'hind_regular', sans-serif;
+	color: #7b7b7b;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a img {
+	border: 0;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul,
+ol {
+	/*margin: 0 0 1.5em 3em;*/
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	/*width: 100%;*/
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+th {
+	color: #369693;
+    font-family: 'sinkin_sans500_medium', sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e74826;
+	/*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+    */
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	
+	/*padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	*/
+	width: 193px;
+	height: 50px;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px; 
+  	-moz-border-radius: 2px; 
+    font-family: 'hindsemibold', sans-serif;
+	font-size: 16px !important;
+	color: #000000;
+	text-transform: uppercase;
+	/*
+	height: 100%;
+	width: 100%;
+	display: block;
+	*/
+	line-height: 3em;
+	text-decoration: none;}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+a {
+	color: #e74826;
+	text-decoration: none;
+	-webkit-transition: 0.2s color linear;
+	-moz-transition: 0.2s color linear;
+	-o-transition: 0.2s color linear;
+	transition: 0.2s color linear;
+}
+
+a.underlined { text-decoration: underline; }
+
+a:visited {
+	color: purple;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	/* clear: both; */
+	display: block;
+	/*float: left;*/
+	float: right;
+	width: 100%;
+}
+
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	/*float: right;*/
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+	padding-right: 30px;
+}
+
+.main-navigation a, .main-navigation .phone {
+	display: block;
+	text-decoration: none;
+	font-family: 'hind_regular', sans-serif;
+	font-size: 13px;
+	color: #4c3013;
+	text-transform: uppercase;
+}
+
+.main-navigation .phone, .main-navigation .fa { 
+	display: inline-block;
+	padding-left: 20px;
+	border-left: 1px solid #4c3013;
+	line-height: 48px;
+	margin-top: -14px;
+	vertical-align: middle;
+}
+
+.main-navigation span .fa {
+	border: none;
+	margin-top: -22px;
+}
+
+a.linked-in { display: inline; font-size: 16px; }
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 3.45em;
+	left: -999em;
+	/*left: 0px;*/
+	z-index: 99999;
+	background-color: #4c3013;
+	padding: 15px 10px;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+	color: #000000;
+}
+
+.main-navigation ul ul li {
+	padding-bottom: 5px;
+}
+
+.main-navigation li a {
+	padding-bottom: 32px;
+}
+
+.main-navigation li a:hover {
+	border-bottom: 3px solid red; 
+}
+
+.main-navigation li .sub-menu a:hover {
+	border: none;
+}
+
+.main-navigation li:hover > a {
+	color: #e74826;
+}
+
+.main-navigation ul ul li:hover  {
+	border-bottom: none;
+
+}
+
+.main-navigation ul ul a:hover {
+}
+
+.main-navigation ul li:hover > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
+}
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 2.1em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	max-height: 247px;
+	height: auto;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+/*
+.gallery-icon { height: 202px; }
+*/
+.gallery br {display:none;} 
+/* CUSTOM */
+
+
+#page {
+ width: 100%;
+ max-width: 1870px;
+ padding: 0px 25px;
+ /* padding: 0px; */
+ margin: 0 auto;
+ color: #4b4b4b;
+ font-size: 20px;
+ font-family: 'hindlight', sans-serif;
+}
+
+#page  h1 { 
+	font-family: 'sinkin_sans400_regular', sans-serif;
+	font-size: 32px;
+	margin-bottom: 5px;
+}
+
+#page h2 {
+   font-family: 'sinkin_sans500_medium', sans-serif;
+   font-size: 20px;
+   color: #2b2b2b;
+}
+
+#page h3 {
+	font-family: 'sinkin_sans400_regular', sans-serif;
+	font-size: 14px;
+	color: #2b2b2b;	
+	text-transform: uppercase;
+}
+
+
+.page-template-page-products-child-php #page h3 {
+	margin-bottom: 24px;
+}
+
+.hindLight-text, p {
+	font-family: 'hindlight', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #7b7b7b;
+}
+
+ul {
+	font-size: 16px;
+	font-family: 'hind_regular', sans-serif;
+	color: #7b7b7b;
+}
+
+.hindlight-brown {
+	font-size: 20px;
+	color: #9e6b43;
+	font-family: 'hindlight', sans-serif;
+	line-height: 1.3;
+	margin-bottom: 14px;
+}
+
+
+.red {
+	color: #e74826;
+	font-size: 14px;
+	font-family: 'hind_regular', sans-serif;
+}
+
+.sinkinSans200Red {
+	color: #e74826;
+	font-family: 'sinkin_sans200_x_light', sans-serif;
+	font-size: 42px;
+}
+
+.padding-10 {
+	padding-bottom: 10px;
+}
+
+.padding-25 {
+	padding-bottom: 25px;
+}
+
+.button {
+	background-color: #e74826;
+	width: 193px;
+	height: 50px;
+	text-align: center;
+	border-radius: 2px;
+	-webkit-border-radius: 2px; 
+  	-moz-border-radius: 2px; 
+}
+
+.button:hover {
+	background-color: #cf4222;
+	-webkit-transition: 0.2s color linear;
+	-moz-transition: 0.2s color linear;
+	-o-transition: 0.2s color linear;
+	transition: 0.2s color linear;
+}
+
+.button a {
+	font-family: 'hindsemibold', sans-serif;
+	font-size: 16px;
+	color: #000000;
+	text-transform: uppercase;
+	height: 100%;
+	width: 100%;
+	display: block;
+	line-height: 3em;
+	text-decoration: none;
+}
+
+
+#masthead {
+	width: 100%;
+	height: 70px;
+  background: url(images/paper-bkg-nav.jpg) repeat #f5f5f5;
+	position: relative;
+}
+
+#masthead .fb_iframe_widget {
+  float: right;
+  width: 100px;
+  margin-top: -15px;
+}
+
+.site-title {
+  float: left;
+  font-family: 'Merienda One', cursive;;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 5px;
+
+  /* Nav-toggle width + search-toggle width - gutter = 86px */
+  max-width: -webkit-calc(100% - 86px);
+  max-width:         calc(100% - 86px);
+}
+
+.site-title a,
+.site-title a:hover {
+  color: #393838;
+  display: block;
+  /*overflow: hidden;*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrap { 
+	margin: 0 auto;
+	max-width: 1280px;
+	padding: 0 48px;
+	width: 100%;
+	border: 1px solid red;
+	overflow: hidden;
+}
+
+.site-branding {
+	float: left;
+	width: 33.33%;
+	max-width: 550px;
+}
+
+.site-branding img { 
+	/*width: auto; */
+	width: 164px;
+	height: 66px;
+	margin-top: 19px;
+}
+
+#site-navigation {
+	/*float: left;*/
+	float: right;
+	/*padding-right: 0.75em;*/
+	width: 66.66%;
+	max-width: 750px;
+  margin-top: 20px;
+	/*border: 1px solid black;*/
+}
+
+
+
+#main .widget-area {
+    overflow: hidden;
+    width: 20%;
+ }
+
+ #main .wrap {
+ 	/*margin-top: 40px;*/
+ }
+
+#main .header .wrap {
+ 	margin-top: 0px;
+ }
+ .page-template-default #page h1{
+ 	margin-top: 43px;
+ 	margin-bottom: 18px;
+ } 
+ .page-template-default #page h2{
+ 	margin-bottom: 35px;
+ }
+
+.site-footer {
+    clear: both;
+    width: 100%;
+    /*margin-top: 95px;*/
+}
+
+/* mobile navigation */
+nav.mobile_menu {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  display: none;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+nav.mobile_menu .menu {
+	display: none;
+}
+nav.mobile_menu ul {
+    width: 100%;
+    position: relative;
+    list-style: none;
+    padding: 0 0 12px 0;
+    margin: 0;
+    background: #f5f5f5; 
+}
+
+
+nav.mobile_menu ul li {
+      margin: 0px;
+      padding: 0px;
+      border-bottom: 1px solid #dbdada; 
+}
+      
+nav.mobile_menu ul li a {
+        color: #4c3013;
+        text-align: left;
+        padding: 6px 24px;
+        display: block;
+        position: relative;
+        text-transform: none;
+        letter-spacing: 0; 
+        text-decoration: none;
+}
+
+ nav.mobile_menu ul li a:hover {
+        color: #e74826; 
+}
+nav.mobile_menu ul li.active > a {
+	color: #000000; 
+}
+
+nav.mobile_menu ul li:last-child {
+	border-bottom: none; 
+}
+
+nav.mobile_menu ul.children {
+	margin: 0;
+	padding: 0 0 12px 12px; 
+	display: none;
+}
+
+nav.mobile_menu ul li ul.childen:hover {
+	/*display: block;*/
+}
+
+nav.mobile_menu ul li ul.children li {
+	border-bottom: none; 
+}
+nav.mobile_menu ul li ul.children li a {
+	font-size: 13px;
+	color: #4c3013;
+	padding: 2px 24px; 
+}
+nav.mobile_menu ul li ul.children li a:hover {
+	color: #e74826; 
+}
+
+.mobile_menu_button {
+  display: none;
+  float: right;
+  line-height: 50px; }
+  .mobile_menu_button span {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle; }
+    .mobile_menu_button span i {
+      background: #353535;
+      border-radius: 3px;
+      padding: 10px 14px;
+      color: #000000; }
+
+
+/* HOMEPAGE CTAS */
+
+.homepage-content { 
+  max-width: 300px; 
+  width: 100%;
+}
+
+.page-template-page-home-php .featured-flyer img {
+  width: 260px;
+  height: 410px; 
+}
+
+
+
+#ctas {
+	margin: 0 auto;
+	height:  500px;
+	width: 100%;
+  border: 1px solid black;
+}
+
+.cta {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	float: left;
+	width: 33.33%;
+	min-height: 500px;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+	position: relative;
+	color: #000000;
+  border: 1px solid red;
+}
+
+.cta-featured-image {
+  width: 300px;
+}
+
+.latest-video, .latest-video iframe, #player { width: 530px; height: 410px;}
+
+.cta * {
+	position: relative;
+}
+
+.overlay:hover:before{
+  position: absolute;
+  content:" ";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display: block;
+  z-index:0;
+  background-color: rgba(226,97,57,0.8);
+}
+
+#page .cta h2, #page .cta p {
+	margin-left: 25px;
+	margin-right: 25px;
+	color: #000000;
+}
+
+
+#page .cta h2 {
+	font-family: 'sinkin_sans500_medium', sans-serif;
+	font-size: 16px;
+	/*margin-top: 130px;*/
+	border-bottom: 1px solid #000000;
+	line-height: 60px;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+	line-height: 1.3;
+	padding-bottom: 15px;
+}
+
+#page .cta p {
+	font-family: 'hindlight', sans-serif;
+	font-size: 16px;
+}
+
+
+#award {
+	text-align: center;
+	padding: 30px 0px 35px 0px;
+}
+
+
+#award h2 {
+	font-size: 20px;
+	color: #444444;
+	font-family: 'sinkin_sans300_light', sans-serif;
+	text-transform: uppercase;
+}
+
+
+#partners {
+	background-color: #f7f5f1;
+	height: 190px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.partner {
+	padding: 42px 0px;
+}
+
+/* FOOTER */
+#colophon .site-info {
+	background-color: #e74826;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;
+	color: #f7f5f1;
+	font-family: 'sinkin_sans200_x_light', sans-serif;
+	padding: 15px 0px;
+
+}
+
+#colophon .site-info .phone {
+	font-family: 'sinkin_sans300_light';
+}
+
+#colophon .footer-sections {
+	color: #000000;
+	font-size: 12px;
+	font-family: 'hind_regular', sans-serif;
+	overflow: hidden;
+	padding: 50px 24px 24px;
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+	/*border: 1px solid black;*/
+}
+
+#colophon .footer-sections ul { list-style: none;}
+
+.footer-sections-wrapper {
+	background: url(images/paper-bkg-nav.jpg) repeat #f5f5f5;
+	height: 215px;
+	width: 100%;
+	overflow: hidden;
+}
+/*
+.footer-sections {	
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+*/ 
+#page .footer-sections .address p { 
+	width: 200px; 
+	color: #000000; 
+}
+
+.footer-sections .address p, .contact-info {
+	font-family: 'hindlight', sans-serif;
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.footer-logo { 
+	background: url(images/logo-footer.png) no-repeat; 
+	width: 26px;
+	height: 62px;
+	float: left;
+	margin-right: 20px;
+}
+
+.copyright-text { 
+	margin-top: 15px;
+  color: #000000;
+}
+
+.copyright, .footer-nav, .address, .contact-info {
+	float: left;
+	max-width: 300px;
+	width: 25%;
+
+}
+
+#menu-footer  {
+	list-style: none;
+	margin: 0px;
+}
+
+#colophon ul a { 
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000000;
+}
+
+#menu-footer a:hover {
+	color: #e74826;
+}
+
+#colophon .address h4 {
+	margin-bottom: 4px;
+  font-size: 20px;
+}
+
+#colophon .address h4, #colophon .contact-info span {
+	color: #bc9a7e;
+	text-transform: uppercase;
+}
+
+#colophon .fa-linkedin {
+	display: block;
+	color: #000000;
+	font-size: 22px;
+	margin-top: 15px;
+
+}
+
+.left { 
+	float: left; 
+  padding-right: 20px;
+	
+}
+
+/* ABOUT PAGE */
+
+.page-template-page-about-php .header { min-height: 125px; }
+
+.page-template-page-about-php #content { margin-bottom: 95px; }
+
+.page-template-page-about-php .left { 
+	width: 33.33%; 
+	padding-right: 2em; 
+	margin-top: 20px;
+	margin-bottom: 40px; 
+}
+
+
+.page-template-page-about-php .left:last-child { text-align: right; }
+
+#page .about-detail1 h2 {
+	font-family: 'sinkin_sans300_light', sans-serif;
+	color: #4c3013;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+
+.page-template-page-about-php #page  p {
+	font-size: 16px;
+	font-family: 'hindlight', sans-serif;
+	color: #4b4b4b;
+	line-height: 1.3;
+	margin-bottom: 14px;
+}
+
+#page .about-detail1 p {
+	font-size: 20px;
+	
+}
+
+/* PRODUCT PAGE */
+
+.custom-table {  border-collapse: collapse; margin: 0 0 2em; }
+
+.custom-table td img { width: 170px; height: 330px; }
+
+.custom-table tr, .custom-table td, .custom-table th { padding: 20px; border: 1px solid #d7d7d7; }
+
+.custom-table .left { width: 18%; padding-right: 2%; }
+
+.page-template-page-products-php h2, .page-template-page-products-php h3, th.custom-table, td.custom-table { text-transform: uppercase;}
+
+.page-template-page-products-php  #content { margin-bottom: 50px; }
+
+.page-template-page-products-php .installer img { vertical-align: middle; }
+
+th.custom-table, td.custom-table, div.custom-table {
+	color: #369693;
+	font-size: 11px;
+	font-family: 'sinkin_sans500_medium', sans-serif;
+	font-weight: normal;
+}
+
+div.custom-table {
+	text-transform: uppercase;
+}
+
+.custom-table .custom-table-desc { color: #7b7b7b; font-size: 11px; font-family: 'hindmedium', sans-serif; }
+
+/* PRODUCT PAGES HEADER STYLING */
+ .header { 
+ 	min-height: 369px;
+ 	background-size: cover;
+ 	background-repeat: no-repeat;
+ 	background-position: center center;
+  margin-bottom: 25px;
+ }
+
+ .page-template-page-features-php  .header{ 
+ 	min-height: 179px;
+ }
+
+ #main .header .wrap { padding-top: 108px; } 
+
+.wrap .header-title, .wrap .header-text {
+	color: #000000;
+	max-width: 700px;
+	width: 100%;
+}
+
+.wrap .header-title {
+	font-family: 'sinkin_sans400_regular', sans-serif;
+	font-size: 58px;
+	text-transform: uppercase;
+}
+ .wrap .header-text {
+	font-family: 'hindlight', sans-serif;
+	font-size: 20px;
+	line-height: 1.4;
+}
+
+
+.panel-size {
+	
+}
+
+.panel-size td { 
+	border: none;
+	border-bottom: 1px solid #d7d7d7; 
+	padding: 10px 0px;
+	color: #e74826;
+	font-family: 'sinkin_sans400_regular', sans-serif;
+	font-size: 16px;
+}
+
+.page-template-page-products-php .wrap .hindlight-text {
+	padding-bottom: 50px;
+}
+
+#product-info-details { margin-top: 50px; }
+#product-info-details .hindlight-text {
+	padding-bottom: 0px;
+} 
+
+#product-info-details .left {
+	width: 33.3%;
+	height: auto;
+	min-height: 310px;
+	padding-right: 2.7%;
+	padding-bottom: 1em;
+}
+
+#product-info-details h3 {
+	font-family: 'sinkin_sans400_regular', sans-serif;
+	font-size: 14px;
+	color: #2b2b2b;
+	margin-bottom: 14px;
+}
+
+/* FEATURE PAGE */
+
+.feature-details, .values, .fireproofing {
+	overflow: hidden;
+}
+
+.feature-details .left { 
+	width: 38%;
+	padding-bottom: 1.2em;
+	padding-right: 1.5em;
+}
+
+.values {
+	margin-top: 50px;
+}
+
+.values .left {
+	width: 33.33%;
+	padding-right: 2.7%;
+}
+
+.fireproofing {
+	background-size: 100% 100%;
+	min-height: 510px;
+	margin-top: 32px;
+	padding-bottom: 20px;
+}
+
+.fireproof-icon {
+	background: url(images/fireproof-icon.png) no-repeat;
+	height: 54px;
+	margin-top: 40px;
+}
+
+.fireproof-icon h3{
+	padding-left:  60px;
+	padding-top: 20px;
+}
+
+.fireproofing .hindLight-brown {
+	width: 50%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+
+.fireproofing .custom-table td{
+	background-color: #000000;
+	text-align: center;
+}
+
+.spread-smore-index {
+	width: 40%;
+}
+
+/* DOWNLOAD PAGE */
+.parent-pageid-9 .left { width: 30%;}
+
+.parent-pageid-9 footer {
+	margin-bottom: -75px;
+}
+
+.parent-pageid-9 #page h1 { margin-bottom: 0px; }
+
+
+.resource-section {
+	background: url(images/download-image.jpg) no-repeat;
+	background-size: 100% 100%;
+	min-height: 630px;
+	overflow: hidden;
+}
+
+ #main .resource-section .wrap {
+	margin-top: 42px;
+}
+
+.resource {
+	margin-bottom: 12px; 
+}
+.left .resource .red { 
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom:  10px;
+ }
+
+ .resource span:first-child {
+ 	margin-right: 20px;
+ }
+
+.fa-file-pdf-o { 
+	font-size: 40px; 
+}
+
+.resource-section .hindlight-text {
+	float: left;
+	margin-top: 35px;
+}
+.resource-section #partners {
+	margin-top: 50px;
+}
+
+/* CONTACT PAGE */
+.page-id-15 table, .page-id-216 table { width: 60%; float: left; }
+
+.page-id-15 td, .page-id-216 td { border: none; }
+
+#gform_wrapper_1 , #gform_wrapper_2 { width: 40%; float: left; margin-top:-75px; }
+
+.page-id-15 #page td h3 , .page-id-216 #page td h3 { margin-bottom: 0px; }
+
+/* FORMS */
+
+.gfield_label, .gfield_required {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-family: 'sinkin_sans400_regular', sans-serif;
+}
+.gfield_label {
+	color: #9e6b43;
+}
+
+.gfield_required {	
+	color: #959595 !important;
+}
+
+
+/* SLIDER */
+.slider-wrapper {
+	position: relative;
+	width: 100%;
+	max-height: 400px;
+	height: 100%;
+  border: 1px solid black;
+}
+.slide {
+	max-height: 766px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: none;
+}
+.slide.active {
+	display: block;
+}
+.slide-text {
+	color: #fff;
+	position: relative;
+	top: 29%;
+	left: 0;
+	bottom: 40%;
+	right: 0;
+	margin: auto;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 58px;
+	font-family: ''sinkin_sans500_medium'', sans-serif;
+	font-weight: 400;
+	width: 80%;
+	line-height: 1.35;
+}
+.slide-text a {
+	font-size: 15px;
+}
+.slide-prev {
+	background: url(images/left-arrow.png) center center no-repeat;
+	left: 0;
+	right: auto;
+}
+.slide-next {
+	background: url(images/right-arrow.png) center center no-repeat;
+	left: auto;
+	right: 0;
+}
+.slide-prev, .slide-next {
+	background-size: cover;
+	cursor: pointer;
+	width: 47px;
+	height: 75px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+.slide-marker-wrapper {
+	top: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: absolute;
+	text-align: center;
+	height: 66px;
+}
+
+.nivo-controlNav { 
+  /*
+  border: 1px solid red; background-color: #ccc;
+  */
+}
+
+.nivo-controlNav a{
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #000000;
+	margin: 2px;
+	display: inline-block;
+	cursor: pointer;
+}
+.nivo-controlNav a.active {
+	background: #000000;
+}
+
+/* EVENTS */
+
+.events {
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.event-detail {
+  font-size: 29px;
+}
+
+.event-detail .event-date {
+  background-color: red;
+  color: #000000;
+}
+.event-image {
+  max-width: 900px;
+  width: 100%;
+  height: 340px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.event-description {
+  margin-top: 20px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+	 @font-face {
+	    font-family: 'hindlight';
+	    src: url('fonts/hind-light-webfont.svg#hindlight') format('svg');
+	}
+
+	@font-face {
+	    font-family: 'hind_regular';
+	    src: url('fonts/hind-regular-webfont.svg#hind_regular') format('svg');
+	}
+
+	@font-face {
+	    font-family: 'hindmedium';
+	    src: url('fonts/hind-medium-webfont.svg#hindmedium') format('svg');
+	}
+
+	@font-face {
+	    font-family: 'hindbold';
+	    src: url('fonts/hind-bold-webfont.svg#hindbold') format('svg');
+	}
+
+	@font-face {
+	    font-family: 'hindsemibold';
+	    src: url('fonts/hind-semibold-webfont.svg#hindsemibold') format('svg');
+	}
+
+
+	@font-face {
+	    font-family: 'sinkin_sans200_x_light';
+	    src: url('fonts/sinkinsans-200xlight-webfont.svg#sinkin_sans200_x_light') format('svg');
+	}
+
+
+	@font-face {
+	    font-family: 'sinkin_sans300_light';
+	    src: url('fonts/sinkinsans-300light-webfont.svg#sinkin_sans300_light') format('svg');
+	}
+
+
+	@font-face {
+	    font-family: 'sinkin_sans400_regular';
+	    src: url('fonts/sinkinsans-400regular-webfont.svg#sinkin_sans400_regular') format('svg');
+	}
+
+	@font-face {
+	    font-family: 'sinkin_sans500_medium';
+	    src:  url('fonts/sinkinsans-500medium-webfont.svg#sinkin_sans500_medium') format('svg');
+	   
+	}
+
+	@font-face {
+	    font-family: 'sinkin_sans600_semibold';
+	    src: url('fonts/sinkinsans-600semibold-webfont.svg#sinkin_sans600_semibold') format('svg');
+	}
+} 
+
+@media only screen and (max-width: 1470px) {
+
+
+}
+
+@media only screen and (max-width: 1370px) { 
+
+}
+
+
+@media only screen and (max-width: 1277px) { 
+  .latest-video, #player {
+    padding-right: 0px;
+    width: 45%;
+    border:1px solid red;
+  }
+}
+
+@media only screen and (max-width: 1275px) { 
+	#product-info-details .left {
+		min-height: auto;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 1400px) {
+  .latest-video, #player {
+    /*width: 35%;*/
+  }
+}
+
+@media only screen and (max-width: 1135px) { 
+	.feature-details .left {
+		width: 100%;
+	}
+
+	.values .left {
+		width: 100%;
+		padding-bottom: 1em; 
+	}
+	
+	.page-template-page-about-php .left { padding: 0px; width: 100%; }
+
+	.page-template-page-about-php .left:last-child { padding-top: 1em; text-align: left; }
+}
+
+@media only screen and (max-width: 1070px) {
+
+  
+  #masthead {
+  	height: auto;
+  }	
+  /* = NAVIGATION
+  -------------------------------------------------------------- */
+  nav[role=navigation] {
+    display: none; 
+  }
+
+  .site-header nav.mobile_menu {
+    display: block; }
+
+  .site-header .mobile_menu_button {
+    display: table; 
+	}
+
+	#partners { height: auto; }
+
+   .footer-sections .copyright {
+   	 padding-left: 30px;
+   }
+
+}
+
+@media only screen and (max-width: 980px) {
+
+
+    .cta {
+		display: block;
+		width: 100%;
+		margin-bottom: 24px;
+	}
+
+	#colophon .footer-sections {
+		width: 100%;
+		max-width: 600px;
+		font-size: 14px;
+	}
+
+	.footer-sections-wrapper { 
+		height: 300px;
+	}
+
+	.footer-sections .copyright {
+		padding-left: 0px;
+	}
+
+	.footer-sections .address, .footer-sections .contact-info {
+		margin-top: 30px;
+	}
+
+	.copyright, .footer-nav, .address, .contact-info {
+		width: 50%;
+		min-height: 120px;
+	}
+
+	.page-id-15 table, .page-id-216 table { width: 100%; }
+
+	#gform_wrapper_1, #gform_wrapper_2 { margin-top: -30px; width: 100%; }
+
+	/* MAKE SOME TABLES RESPONSIVE */
+	
+	.custom-table table, .custom-table thead, .custom-table tbody, .custom-table th, .custom-table td, .custom-table tr { 
+		display: block; 
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.custom-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.custom-table tr { border: 1px solid #d7d7d7; }
+	
+	.custom-table td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #d7d7d7; 
+		position: relative;
+		/*padding-left: 50%; */
+		padding-top: 40px;
+	}
+	.custom-table td:last-child { border: none; }
+
+	.custom-table td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		/*top: 6px;*/
+		top: 18px;
+		/*left: 6px;*/
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	/*
+	Label the data
+	*/
+	.page-template-page-products-php .custom-table td:nth-of-type(1):before { content: attr(data-content); }
+	.page-template-page-products-php .custom-table td:nth-of-type(2):before { content: attr(data-content); }
+	.page-template-page-products-php .custom-table td:nth-of-type(3):before { content: attr(data-content); }
+	.page-template-page-products-php .custom-table td:nth-of-type(4):before { content: attr(data-content); }
+	.page-template-page-products-php .custom-table td:nth-of-type(5):before { content: attr(data-content); }
+
+	.custom-table td:nth-of-type(1):before { content: attr(data-content); }
+	.custom-table td:nth-of-type(2):before { content: attr(data-content); }
+    .custom-table td:nth-of-type(3):before { content: attr(data-content); }
+	.custom-table td:nth-of-type(4):before { content: attr(data-content); }
+	.custom-table td:nth-of-type(5):before { content: attr(data-content); }
+
+	.custom-table td:nth-of-type(1):before, .custom-table td:nth-of-type(2):before, .custom-table td:nth-of-type(3):before, .custom-table td:nth-of-type(4):before, .custom-table td:nth-of-type(5):before {
+		color: #369693;
+		font-size: 11px;
+		font-family: 'sinkin_sans500_medium', sans-serif;
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
+   /* .custom-table tr,  .custom-table th { border: none; }*/
+
+   /* .custom-table td { margin-bottom: 10px; }*/
+
+    .custom-table .custom-table-desc { padding: 0px; }
+}
+/*
+@media only screen and (max-width: 1024px) {
+ 
+  }
+*/
+
+/* Will target mobile devices in landscape mode and up*/
+@media only screen and (max-width: 980px) {
+	
+}  
+
+@media only screen and (max-width: 600px) {
+	.footer-sections-wrapper {
+		height: auto;
+	}
+	.copyright, .footer-nav, .address, .contact-info {
+		width: 100%;
+		font-size: 20px;
+		/*border: 1px solid black;*/
+	}
+
+	#colophon .footer-sections {
+		font-size: 24px;
+		max-width: 300px;
+	}
+
+	.copyright-text {
+		margin-top: 0px;
+	}
+}
+/*
+min-width: 600px: Targets tablets in portrait mode and up
+
+min-width: 768px: Targets tablets in landscape mode and up
+
+min-width: 1024px: Targets the desktop view       
+
+@media (min-width: 768px) and (max-width: 1175px) {
+ 
+	
+ 
+}
+ 
+
+@media (min-width: 320px) and  (max-width: 767px) {
+ 
+
+ 
+}
+*/
+/*
+@media (max-width: 600px) {
+ 
+/** Hide the caption and control nav for small devices since they can swipe slides */
+/*
+
+ }
